@@ -1,0 +1,703 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: #fff;
+    font-size: .80em;
+    font-family: "Lucida Grande" , "Helvetica Neue" , "Segoe UI" , Helvetica, Arial, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #111;
+    min-width: 1050px;
+}
+
+a:link, a:visited
+{
+    color: #036EC5;
+}
+
+a:hover
+{
+    color: #555;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #036EC5;
+    text-decoration: none;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #555; /*font-variant: small-caps;*/
+    text-transform: none;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+    border-bottom: 1px solid #999;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+hr
+{
+    border: none;
+    background-color: #999;
+    height: 1px;
+}
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+small
+{
+    font-size: .9em;
+    color: #666;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 100%;
+    background-color: #fff;
+    margin: 0px auto 0px auto;
+    border: 0px solid #496077;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px 0 0 0;
+    padding: 0px;
+    /*background: url("../media/images/header.png") repeat-x #f5f5f5;*/
+    background:#ffffff;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #dadada;
+    box-shadow: 0px 2px 5px 0px #BBB;
+    -webkit-box-shadow: 0px 2px 5px 0px #BBB;
+  -moz-box-shadow: 0px 2px 5px 0px #BBB;
+}
+
+.header h1
+{
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #8B4416;
+    border: none; /*line-height: 2.5em;*/
+    font-size: 1.5em;
+}
+.header_span
+{
+    font-weight: normal;
+    color: #096E9E;
+    font-size: 1.5em;
+}
+
+.pageHeading
+{
+    /*height:32px;*/
+    background: url("../media/images/pageH.png") repeat-x #f5f5f5; /*font-weight:bold;*/
+    padding: 2px 0 10px 10px;
+    font-size: 15px;
+    color: #485154;
+}
+
+.main
+{
+    padding: 10px;
+    margin: 0px; /*12px 8px 8px 8px;*/
+    min-height: 390px;
+    background: #fff;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer2
+{
+    color: #666;
+    padding: 6px;
+    text-align: center;
+    border-top: 1px solid #ddd; /*position: fixed;*/
+    bottom: 0;
+    font-size: 0.9em;
+    background-color: #f5f5f5;
+}
+
+.footer
+{
+    color: #367EAA;
+    padding: 6px;
+    text-align: center;
+    bottom: 0;
+    font-size: 0.9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+div.logout
+{
+    font-size: 0.9em;
+    padding: 4px 35px 4px 0;
+    color: #803D11;
+}
+div.hideSkiplink
+{
+    /*background-color:#3a4f63;*/ /*background: url("../media/images/menu55.png") repeat-x #ccc;*/ /*width: 100%;*/
+    height: 20px;
+    padding-right: 0px; /*border-top:1px solid #000;*/
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    /*background-color: #465c71;     border: 1px #4e667d solid;*/
+    color: #000;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-variant: small-caps;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #f0f0f0;
+    color: #666;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+#sddm
+{
+    margin: 0;
+    padding: 0;
+    z-index: 30;
+}
+
+#sddm li
+{
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    float: right; /*font: bold 11px arial;*/
+}
+
+#sddm li a
+{
+    display: block;
+    margin: 4px 1px 0 0;
+    padding: 7px 2px 8px;
+    width: 80px; /*background: #5970B2; 	color: #FFF;*/
+    color: #444;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-right: 0px solid #ccc;
+    border-left: 0px solid #f5f5f5;
+}
+
+#sddm li a:hover
+{
+    /*background-color: #000;*/ /*background: url("../media/images/menu2.png") repeat-x transparent;*/ /*font-weight:bold;*/
+    background-color: #fff;
+    border: 0px solid #aaa;
+    border-bottom: 0px solid #aaa;
+    color: #0479AE; /*#763A06;*/
+}
+
+#sddm div
+{
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    border: 1px solid #bbb;
+    border-top: none;
+    z-index: 1000;
+}
+
+#sddm div a
+{
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 6px;
+    width: 88px;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: none;
+    background: url("../media/images/header.png") repeat-x scroll 0 -33px #f5f5f5;
+    color: #333; /*border-bottom: 1px solid #ddd;	*/
+}
+
+#sddm div a:hover
+{
+    background: none #78B6EF;
+    color: #fff;
+    border: 0px solid #aaa;
+}
+
+.logoutimg
+{
+    border: 0px solid #fff;
+    width: 28px;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #dadada;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 40px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline
+{
+    display: inline;
+}
+
+legend
+{
+    color: #373839;
+    font-size: 1.1em;
+    font-variant: small-caps;
+    padding: 2px 4px 8px;
+}
+
+input.textEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: #FC2922;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* grid view */
+
+.rowAlter
+{
+    background-color: #f5f5f5;
+}
+
+.RowStyle
+{
+    background-color: #EFF5f9; /*text-align: center;*/
+    color: #223350;
+    font-size: 12px;
+}
+
+.AlternatingRowStyle
+{
+    background-color: White; /*text-align: center;*/
+    color: #223350;
+    font-size: 12px;
+}
+
+.SelectedRowStyle
+{
+    background-color: #D1DDF1;
+    font-weight: normal;
+    color: #223355;
+    font-size: 12px;
+}
+
+.HeaderStyle
+{
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #335599;
+    height: 20px;
+    border-bottom: 1px solid #8899aa;
+    font-size: 12px; /*text-align: center;*/
+}
+
+.HeaderStyleDark
+{
+    background: url("../media/images/grid_header.png") repeat-x scroll 50% 50% #5C9CCC;
+    font-weight: bold;
+    color: White;
+    height: 20px;
+    border-bottom: 1px solid #8899aa;
+    font-size: 12px;
+    text-align: left;
+}
+
+.HeaderStyleDarkSimple
+{
+    background-color: #f0f0f0; /*font-weight: bold; 	color: White; 	height: 20px; 	border-bottom: 1px solid #8899aa; 	font-size: 12px; 	text-align: left;*/
+}
+
+.HeaderStyleWhite
+{
+    background-color: #ffffff;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+    color: #777; /*height: 20px; 	 	font-size: 12px; 	*/
+}
+
+.RowStyleWhite
+{
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+}
+.AlterRowStyleWhite
+{
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+}
+
+.AlternatingRowStyleSimple
+{
+    background-color: #f5f5f5; /*text-align: center;*/
+}
+
+.EditRowStyle
+{
+    background-color: #2461BF;
+}
+
+/* ================== */
+
+.aspLabel
+{
+    color: #1F367A;
+    line-height: 30px;
+}
+
+.buttonStyle
+{
+    background: url("../media/images/b.png") no-repeat #d9d9d9;
+    border: none;
+    color: #4E0702;
+    height: 26px;
+    width: 127px;
+    padding-bottom: 3px;
+    font-size: 12px; /*font-variant: small-caps;*/
+    cursor: pointer;
+}
+
+.buttonStyle:hover
+{
+    background: url("../media/images/b.png") scroll -129px 0px no-repeat;
+    color: #896F52;
+}
+
+.redfont
+{
+    color: #704F0E;
+    font-weight: bold;
+    border: 1px solid #704F0E;
+}
+
+.buttonStyle70
+{
+    background: url("../media/images/b70.png") no-repeat #d9d9d9;
+    border: none;
+    color: #4E0702;
+    height: 26px;
+    padding-bottom: 3px;
+    font-size: 12px;
+    font-variant: small-caps;
+    cursor: pointer;
+    width: 77px;
+}
+
+.buttonStyle70:hover
+{
+    background: url("../media/images/b70.png") scroll 0 -33px no-repeat;
+    color: #896F52;
+}
+
+
+.textBox
+{
+    /*font-size: 12px; 	font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Helvetica, Arial, Verdana, sans-serif; 	padding: 1px 0 1px 5px;*/
+    background: #ffffff url(../media/images/tb.png) repeat-x;
+    border: 1px solid #e5e5e5;
+    height: 18px;
+    color: #444;
+}
+
+.dropDown
+{
+    font-size: 12px;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Helvetica, Arial, Verdana, sans-serif;
+    padding: 2px 0 1px 5px;
+}
+
+.messageBox
+{
+    font-size: 11px;
+    background-color: #ffffde;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #FFCF0F;
+    line-height: 1em;
+}
+
+.floatleft
+{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.homeBox
+{
+    width: 320px;
+}
+
+.formBox
+{
+    margin: 0;
+    padding: 3px 10px 10px 20px;
+    line-height: 30px;
+}
+
+.formBoxGV
+{
+    margin: 0;
+    padding: 3px 10px 10px 20px; /*line-height:30px;*/
+}
+
+.evenRow
+{
+    background: #fff;
+}
+
+.oddRow
+{
+    background: #f0f0f0;
+}
+
+table.dataEntryTable
+{
+    border: 1px solid #e5e5e5;
+}
+
+.info
+{
+    padding-left: 20%;
+    font-size: 11px;
+}
+
+.printItem
+{
+    width: 400px;
+}
+
+.shadow
+{
+    -moz-box-shadow: 2px 2px 10px 4px #BECED9;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #bbb; /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#bbb')"; /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa');
+}
+
+
+#progressBackgroundFilter
+{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    z-index: 1000;
+}
+
+#processMessage
+{
+    position: fixed;
+    top: 30%;
+    left: 43%;
+    padding: 30px;
+    width: 15%;
+    z-index: 1001;
+    background-color: #fff;
+    border: solid 0px #000;
+}
+
+.redCell
+{
+    background-image: url("../media/images/cellred.png"); /* no-repeat scroll 0 0 #FFFFFF;*/
+    background-repeat: no-repeat;
+}
+.blueCell
+{
+    background-image: url("../media/images/cellblue.png"); /* no-repeat scroll 0 0 #FFFFFF;*/
+    background-repeat: no-repeat;
+}
+.orangeCell
+{
+    background-image: url("../media/images/cellorange.png"); /* no-repeat scroll 0 0 #FFFFFF;*/
+    background-repeat: no-repeat;
+}
+.greenCell
+{
+    background-image: url("../media/images/cellgreen.png"); /* no-repeat scroll 0 0 #FFFFFF;*/
+    background-repeat: no-repeat;
+}
+
+.big {
+    font-size: 2.5em;
+    
+}

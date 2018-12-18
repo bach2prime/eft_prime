@@ -1,0 +1,79 @@
+﻿//return ack
+
+get from in type=11 : branchwise (see returnItemFinal)
+get the file name
+replace .xml with .ack
+find in ack folder (same as outward finalize)
+show the file
+
+another approach
+
+set a link in ReturnItem.aspx page 
+get ret item from parent id
+get file name and check if exists and contains ok
+
+
+
+
+//user report - done
+
+public string BranchNameExt added in usereft class
+
+make a report rdlc done
+dal fnc are ready done
+add to user page in admin done
+
+
+========== archive report ==============
+
+1. inward items by branch - 
+	
+	groupby recvBankName -> recvBranchName in rdlc
+
+2.	in ret
+	complex for fetching parentSettDate -> leave it, make it simple like out items
+
+
+
+SELECT     COUNT(EdrInId) AS Expr1, SUBSTRING(OrigBank, 1, 3) AS Expr2, SUM(AmountCr) AS Expr3, SUM(AmountDr) AS Expr4
+FROM         EdrBatchIn
+WHERE     (SettlementDate >= '2012-08-14') AND (BankCode = '035') AND (SettlementDate < '2012-08-15') AND (ItemType = 10)
+GROUP BY SUBSTRING(OrigBank, 1, 3)
+
+
+============ zone report ============
+				
+				group by
+				------------------
+in item			receivingBankRt
+in ret			routingnumber
+
+out item		routingnumber
+out ret			nothing -> put it in AdviceRt
+
+zone
+-------------
+routing -> district code-> zone -> branch
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>> update advicert for zone settlement report for OutRet
+
+update EdrIn  set AdviceRT = edr1.ReceivingBankRt 
+  from EdrIn as edr1  inner join EdrIn  on edr1.EdrInId=EdrIn.ParentEdrIn  
+  where EdrIn.ItemType = 11
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>> update ReceivingBankRt 8 -> 9 digit
+
+update EdrIn  set ReceivingBankRt = b.RoutingNo 
+ from OtherBranch as b  inner join EdrIn  on SUBSTRING(b.RoutingNo,1,8) =EdrIn.ReceivingBankRt
+ where len(EdrIn.ReceivingBankRt) = 8 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+to do : sjibl
+
+update view edrbatchout  add batch.status and filter by sent to pbm for sjibl

@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EFT_Proj.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link rel="shortcut icon" href="media/images/favicon.ico">
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function loading() {
+            document.getElementById("load").style.visibility = "";
+        }     
+        
+        function ConfirmAndLoading(msg) {
+            var a = window.confirm(msg);
+            if (a)
+                return loading();
+            else
+                return false;
+        }
+    </script>
+    <script type="text/javascript">
+        // Copyright 2006-2007 javascript-array.com
+
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        // open hidden layer
+        function mopen(id) {
+            // cancel close timer
+            mcancelclosetime();
+
+            // close old layer
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+            // get new layer and show it
+            ddmenuitem = document.getElementById(id);
+            ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose() {
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime() {
+            closetimer = window.setTimeout(mclose, timeout);
+        }
+
+        // cancel close timer
+        function mcancelclosetime() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose; 
+
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page shadow">
+        <div class="header">
+            <table width="100%">
+                <tr>
+                <td style="width: 225px">
+                <img src="/media/images/bank.jpg" width="220px" style="margin: 0px auto;" />
+                </td>
+                    <td style="width: 30px; text-align: left;" class="header_span">
+                    
+                        
+                            <%--EFT--%>
+                            <%--<br />--%>
+                            <asp:Label ID="labelBankName" Text="" runat="server" Visible="false"></asp:Label>
+                            
+                       
+                    </td>
+                    <td style="text-align: right">
+                        <div class="logout">
+                            <asp:Label ID="lblwelcome" runat="server" Visible="false" Text="Welcome"></asp:Label>
+                        </div>
+                        <div class="hideSkiplink" id="menu" runat="server" clientidmode="Static">
+                            <%--<ul id="sddm">
+                                <li><a href="#">Logout</a></li>
+                                <li><a href="#">Archive</a></li>
+                                <li><a href="#">Control Panel</a></li>
+                                <li><a href="#">Report</a></li>
+                                <li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()">Inward</a>
+                                    <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        <a href="/Inward/InMake.aspx">Make</a> <a href="#">Check</a> <a href="#">Download File</a>
+                                    </div>
+                                </li>
+                                <li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()">Outward</a>
+                                    <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        <a href="#">Make</a> <a href="#">Check</a> <a href="#">Send File</a>
+                                    </div>
+                                </li>
+                            </ul>--%>
+                        </div>
+                    </td>
+                    <td style="width: 30px; text-align: left;">
+                        <a href='/logout.aspx'>
+                            <img class="logoutimg" src='/media/images/logout.png' width='28px' alt='' /></a>
+                    </td>
+                </tr>
+            </table>
+            <%--<div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                        ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                            LogoutPageUrl="~/" />
+                        ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>--%>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </div>
+    <div class="footer">
+        <table style="margin: 0 auto;" cellpadding="2" cellspacing="0">
+            <tr>
+                <td>
+                    <b></b>&nbsp;&nbsp;<a href="http://www.commlinkinfotech.com/" target="_blank">Commlink
+                        Info Tech Ltd.</a>&nbsp;&nbsp;&nbsp;
+                </td>
+                <td valign="bottom">
+                    <img alt="" src="/media/images/favicon.ico" width="20px" />
+                </td>
+                <td>
+                    &nbsp;&nbsp; <a href="mailto:eft@commlinkinfotech.com" target="_blank">eft@commlinkinfotech.com</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

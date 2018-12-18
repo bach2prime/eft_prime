@@ -1,0 +1,17 @@
+//select all inward of a day of 035
+
+SELECT     EdrInId, AmountDr, AmountCr, AdrIndicator, AdrCount, AdviceRT, AddendaInformation, BatchInIdFK, BranchIdFK, BeftnRt, BeftnData, CreationJdate, ChangeCode, 
+                      CorrectedData, CreationDate, DfiAccountNumber, DiscretionaryData, FileId, FilenameItem, ItemType, ItemTypeIndicator, MakerReturnReason, ParentEdrIn, 
+                      PaymentInfo, ReceivingBankRt, RecvBankName, ReceiverName, ReturnReason, ReceiverId, Status, SettlementDate, TraceNumber, TransactionCode
+FROM         EdrIn
+WHERE     (SettlementDate = '2011-12-21') AND (ReceivingBankRt LIKE '035%')
+
+
+//problem in zonewise report n datewise report for OUTWARD
+
+look at EdrBatchOut -> OrigBank -> it should not contain BKB rt no -> it comes from BatchOut-> OrigBank
+
+
+//zonewise summary report problem for INWARD
+
+see return items > check their recvbankname

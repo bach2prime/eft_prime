@@ -1,0 +1,38 @@
+﻿Inward Items N Out Returns by Branch														For Archive
+
+	get by branch id or all																	branch id
+	rdlc > group by recvBankName which is the benef branch name								recvBankName
+			for zone concept > branchid is zoneid :: recvBankName is benef branch
+			for non-zone		> branchid is the id of recvBankName	
+
+	update: user join for txcode
+
+
+Inward Items N Out Returns by Bank
+	get by branch id or all																	OrigBankCode (1st 3 digits from OrigBank)
+	rdlc > group by	[OrigBankName]															Name not needed ..  get by joining (preloaded bank list)
+
+
+Outward Items																				BranchId > sender
+																							RecvBankCode < 3 digits of receivingBankRt
+																							RecvBankRt	<  receivingBankRt: if 8: calc check digit 
+																							RecvBranchName < null for returns
+
+Settlement
+
+	Get Bankwise In sum + count > A
+	Get Bankwise IR sum + count > B
+	Concat A n B > P
+	Get Bankwise sum + count from P
+
+	Get Bankwise Out sum + count > C
+	Get Bankwise OR  sum + count > D
+	Concat C n D > Q
+	Get Bankwise sum + count from Q
+
+	Merge P n Q
+
+
+Bank Branch related ingo in archive
+				own										others
+EdrIn   In	>	BranchId RoutingNumber				bankCode

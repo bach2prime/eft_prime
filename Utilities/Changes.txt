@@ -1,0 +1,132 @@
+﻿*** datewise settlement > from SP
+
+
+*** Settlement Date from Jdate
+webconfig > IsFridayOpen  IsSaturdayOpen 
+maintain holiday list 
+
+*** BracBank prob in return bat.BCR.OrigBank
+solved forcefully > newBatchOut.OrigBank = bat.BHR.OrigBank + DALUtilities.CalculateCheckDigit(bat.BHR.OrigBank);
+
+
+
+march 2013
+
+1. advice no numeric non zero in outward batchwise, OutRet itemwise
+
+2. zone wise advice.. like central advice.. in pdf/date/advice folder
+
+login as zone..
+print advice for its branches
+
+from: sholashahar
+to: kamal bazar
+to:....
+
+1by1 => click 'gen advice' -> show benef branch list as link button -> click each button
+1click => 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+for demo
+
+GetOutwardItemsByBatchStatus: uncomment status
+
+29 jan 2013
+
+new table BBCharge and reports
+*********************
+USE [EFT_New_BKB]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BBCharge](
+	[ActivationDate] [date] NOT NULL,
+	[BBChargeAndVat] [money] NOT NULL,
+	[BachCharge] [money] NOT NULL,
+	[VatInPercent] [money] NOT NULL,
+ CONSTRAINT [PK_BBCharge] PRIMARY KEY CLUSTERED 
+(
+	[ActivationDate] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+*******************
+21 jan 2013
+BKB
+edrout dfi acc no length 15 -> 17
+
+
+
+16 July
+advice for sjibl
+internal void AdviceTest(IQueryable<Branch> branches_all) in reportrepo
+
+TODO
+	--change report design
+	--load this report only for sjibl - check report.aspx.cs
+
+
+-------------------------------------------------------------
+10 july
+inwarditems.rdlc -> param:BranchName
+
+-------------------------------------------------------------
+UserEFT
+
+FullName	100 null
+PhoneNo		20 null
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+use [EFT_New_name]
+go
+
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.UserEFT ADD
+	FullName varchar(100) NULL,
+	PhoneNo varchar(20) NULL
+GO
+ALTER TABLE dbo.UserEFT SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+
+message option
+
+
+Table/View		column		change
+
+BatchIn		OrigBank	varchar[8] -> varchar[9]
+
+EdrOut   AccountFrom varchar(20) NULL,
+	     SenderName varchar(50) NULL
+
+EdrBatchOut		AccountFrom SenderName
+
+
+
+web.config
+
+ <add key="OutSenderInfo" value="true" />
+    <add key="OutSenderAcc" value="14" />
+    <add key="OutSenderName" value="30" />
