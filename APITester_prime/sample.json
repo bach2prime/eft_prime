@@ -1,0 +1,44 @@
+{
+  "isVal": "true",
+  "entDate": "08/01/2019",
+  "currency": "BDT",
+  "appType": "CIE",
+  "serClass": "Credit",
+  "comId": "API101",
+  "comName": "API Company",
+  "batDesc": "API Description",
+  "discData": "test API",
+
+  "outItems": [
+    //{
+    //  "senderAcc": "11100001100",
+    //  "senderName": "API Sender",
+    //  "paymentInfo": "API Payment",
+    //  "senderEmail": "mraisul054@gmail.com",
+
+    //  "rcvBranchCode": "010150195",
+    //  "transCode": "22",
+    //  "amount": "1",
+    //  "rcvAccNum": "20002000222",
+    //  "rcvId": "APIRec-101",
+    //  "rcvName": "API Receiver",
+    //  "recEmail": "mraisul054@gmail.com"
+    //},
+
+    {
+      "senderAcc": "11100001102",
+      "senderName": "API Sender2",
+      "paymentInfo": "API Payment2",
+      "senderEmail": "mraisul054@gmail.com",
+
+      "rcvBranchCode": "010150195",
+      "transCode": "22",
+      "amount": "20",
+      "rcvAccNum": "20002000223",
+      "rcvId": "APIRec-102",
+      "rcvName": "API Receiver2",
+      "recEmail": "mraisul054@gmail.com"
+    }
+  ]
+
+}
