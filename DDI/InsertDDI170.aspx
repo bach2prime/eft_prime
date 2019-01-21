@@ -55,26 +55,23 @@
                             if (!$.isEmptyObject(stringyfyData)) {
                                 $('#tbSenderName').val(stringyfyData.SenderName);
                                 $('#lblAvailableBalance').text('Balance: ' + stringyfyData.SenderBalance);
-                                $('#tbSenderEmail').text(stringyfyData.SenderEmail);
+                                $('#tbSenderEmail').val(stringyfyData.SenderEmail);
+                                if (stringyfyData.SenderMob) {
+                                    $('#SenderMobileNumber').text('Mobile: ' + stringyfyData.SenderMob);
+                                }
+                                else {
+                                    $('#SenderMobileNumber').text('');
+                                }
                             }
                             else {
-                                //$('#tbSenderName').val('');
-                                //$('#lblAvailableBalance').text('');
-                                //$('#tbSenderEmail').text('');
                                 alert("No info found for the Account Number and Company Id.");
                             }
                         }
                         else {
-                            //$('#tbSenderName').val('');
-                            //$('#lblAvailableBalance').text('');
-                            //$('#tbSenderEmail').text('');
                             alert("No info found for the Account Number and Company Id.");
                         }
                     },
                     error: function (response) {
-                        //$('#tbSenderName').val('');
-                        //$('#lblAvailableBalance').val('');
-                        //$('#tbSenderEmail').text('');
                         alert("Problem in fetching Sender info.");
                     }
                 });
@@ -243,6 +240,8 @@
                     </td>
                     <td colspan="1">
                         <asp:TextBox ID="tbSenderName" Width="220px" runat="server" CssClass="textBox" MaxLength="0"></asp:TextBox>
+                         &nbsp;
+                        <asp:Label runat="server" ID="SenderMobileNumber" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr class="evenRow">
