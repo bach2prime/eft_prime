@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="ParseAckAll.aspx.cs" Inherits="EFT_Proj.Outward.ParseAckAll" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         function showFinalizeBatchDialog(batchId) {
             var url = '/Outward/ProcessFinalizedBatch.aspx?batchId=' + batchId;
             var r = window.showModalDialog(url, [], "dialogwidth: 950px; dialogheight: 850px; resizable: yes; dialogHide:yes; center:yes;");
         }
-    </script>
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding: 0px; border: 1px solid #f0f0f0;">
@@ -52,7 +52,8 @@
                         
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <a href="javascript:showFinalizeBatchDialog('<%# Eval("BatchOutId") %>')"><%# Eval("Ack") %></a>
+                                <%--<a href="javascript:showFinalizeBatchDialog('<%# Eval("BatchOutId") %>')"><%# Eval("Ack") %></a>--%>
+                                <a href="ProcessFinalizedBatch.aspx?batchId=<%# Eval("BatchOutId") %>" target="_blank"><%# Eval("Ack") %></a>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
