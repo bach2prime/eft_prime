@@ -54,13 +54,13 @@
                             var stringyfyData = $.parseJSON(response.d);
                             if (!$.isEmptyObject(stringyfyData)) {
                                 $('#tbSenderName').val(stringyfyData.SenderName);
-                                $('#lblAvailableBalance').text('Balance: ' + stringyfyData.SenderBalance);
+                                $('#lblAvailableBalance').val('Balance: ' + stringyfyData.SenderBalance);
                                 $('#tbSenderEmail').val(stringyfyData.SenderEmail);
                                 if (stringyfyData.SenderMob) {
-                                    $('#SenderMobileNumber').text('Mobile: ' + stringyfyData.SenderMob);
+                                    $('#SenderMobileNumber').val('Mobile: ' + stringyfyData.SenderMob);
                                 }
                                 else {
-                                    $('#SenderMobileNumber').text('');
+                                    $('#SenderMobileNumber').val('');
                                 }
                             }
                             else {
@@ -94,7 +94,7 @@
             cursor: not-allowed;
         }
 
-        #lblAvailableBalance {
+        #lblAvailableBalance, #SenderMobileNumber {
             color: blue;
             text-align: left;
             font-weight: normal;
@@ -241,7 +241,7 @@
                     <td colspan="1">
                         <asp:TextBox ID="tbSenderName" Width="220px" runat="server" CssClass="textBox" MaxLength="0"></asp:TextBox>
                          &nbsp;
-                        <asp:Label runat="server" ID="SenderMobileNumber" Text=""></asp:Label>
+                        <asp:TextBox ID="SenderMobileNumber" runat="server" CssClass="textBox"></asp:TextBox>
                     </td>
                 </tr>
                 <tr class="evenRow">
@@ -303,7 +303,7 @@
                     <td colspan="1">
                         <asp:TextBox ID="tbAmount" Width="220px" runat="server" onblur="javascript:return OnFocusOutForm()"
                             CssClass="textBox" MaxLength="13"></asp:TextBox>
-                        <asp:Label ID="lblAvailableBalance" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="lblAvailableBalance" runat="server" CssClass="textBox"></asp:TextBox>
                         <br />
                         <asp:Label ID="labelAmountWord" runat="server" Font-Size="12px" ForeColor="#0B647D"></asp:Label>
                     </td>
