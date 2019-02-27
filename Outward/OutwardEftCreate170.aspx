@@ -127,11 +127,11 @@
                                 </asp:DropDownList>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:DropDownList ID="DropDownListServiceClass" runat="server" AutoPostBack="true"
-                                    OnSelectedIndexChanged="DropDownListServiceClass_SelectedIndexChanged" Enabled="false">
+                                    OnSelectedIndexChanged="DropDownListServiceClass_SelectedIndexChanged">
                                     <%--<asp:ListItem Text="Select Type" Value="-1"></asp:ListItem>--%>
                                     <asp:ListItem Text="Credit" Value="220"></asp:ListItem>
-                                   <%-- <asp:ListItem Text="Debit" Value="225"></asp:ListItem>
-                                    <asp:ListItem Text="Mixed" Value="200"></asp:ListItem>--%>
+                                    <asp:ListItem Text="Debit" Value="225"></asp:ListItem>
+                                    <%--<asp:ListItem Text="Mixed" Value="200"></asp:ListItem>--%>
                                 </asp:DropDownList>
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:CheckBox ID="CBSManualTransection" Visible="false" 
