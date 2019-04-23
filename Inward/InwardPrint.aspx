@@ -20,6 +20,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+    <asp:Panel runat="server" ID="PanelError" CssClass="messageBox">
+        <asp:Label Text="Error" ID="labelError" runat="server"></asp:Label>
+    </asp:Panel>
     <div style="padding: 0px; border: 1px solid #f0f0f0;">
         <table width="100%" style="margin-left: 0px; border: 2px solid #fff; background-color: #f5f5f5;"
             cellpadding="5">
@@ -27,8 +30,7 @@
                 <td>
                     <b>Print Inward Items</b>
                 </td>
-                <td>
-                    Business Date: (Please Select Last Business Date)&nbsp;&nbsp;&nbsp;
+                <td>Business Date: (Please Select Last Business Date)&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="tbsettDate" runat="server" CssClass="textBox" Width="80px"></asp:TextBox>
                     <cc1:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="Image1"
                         TargetControlID="tbsettDate" Format="dd/MM/yyyy">
@@ -36,7 +38,7 @@
                     <asp:Image ID="Image1" runat="server" Height="18px" ImageUrl="~/media/images/cal2.png" />
                     &nbsp;&nbsp;&nbsp;
                     <asp:DropDownList ID="ddlBranch" runat="server" DataTextField="BranchName" DataValueField="BranchID"
-                          AppendDataBoundItems="true">
+                        AppendDataBoundItems="true">
                     </asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;
                     <asp:Button CssClass="buttonStyle" ID="ButtonGetItems" runat="server" Text="Get Items"
@@ -69,6 +71,32 @@
                 </td>
             </tr>
         </table>
+        <%--for Meghna Bank--%>
+        <div runat="server" id="divMeghna" visible="false">
+            <table cellpadding="15">
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="LinkButtonCrExcel" runat="server" OnClick="LinkButtonInward_Click">Inward Credit Excel</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="LinkButtonDrExcel" runat="server" OnClick="LinkButtonInward_Click">Inward Debit Excel</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div runat="server" id="divNrbg" visible="false">
+            <table cellpadding="15">
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="LinkButtonNrbgHeadOff" runat="server" OnClick="LinkButtonInward_Click">CBS File for HO</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="LinkButtonNrbgBranch" runat="server" OnClick="LinkButtonInward_Click">CBS file for Branch</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </fieldset>
     <br />
     <%--<fieldset class="printItem" style="width: 900px">
@@ -86,9 +114,8 @@
     <%--<asp:Button CssClass="buttonStyle" ID="ButtonAllPDF" runat="server" Text="All PDF"
         OnClick="ButtonAllPDF_Click" OnClientClick="loading()" />--%>
     <br />
-    
-    <h3>
-        Item List</h3>
+
+    <h3>Item List</h3>
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt"
         Width="900px" Visible="False" BackColor="#e9e9e9" Height="469px" ShowZoomControl="False">
         <LocalReport ReportPath="">

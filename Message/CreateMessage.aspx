@@ -1,13 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="CreateMessage.aspx.cs" Inherits="EFT_Proj.Message.CreateMessage" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent"    runat="server">
+  <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            
+        </Scripts>
+    </asp:ScriptManager>
     <h3>Send Message</h3>
     <p><asp:Label ID="MsgLabel" CssClass="messageLabel" runat="server" ForeColor="Blue" Text="Label" Visible="False"></asp:Label></p>
     
     <table cellspacing="4" >
+    <tr>
+    <td>Validity</td>
+    <td>
+    <cc1:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="Image1"
+                    TargetControlID="tbsettDate" Format="dd/MM/yyyy">
+                </cc1:CalendarExtender>
+                
+                <asp:TextBox ID="tbsettDate" runat="server" CssClass="textBox" Width="80px"></asp:TextBox>
+                <asp:Image ID="Image1" runat="server" Height="18px" ImageUrl="~/media/images/cal2.png" />
+    </td>
+    </tr>
         <tr>
             <td valign=top>
                 Select Branch :
