@@ -21,6 +21,8 @@
             <tr>
                 <td>
                     <b>Batch List</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:DropDownList ID="ddlBranch" runat="server" DataTextField="BranchName" DataValueField="BranchID" AppendDataBoundItems="true"/>
+                    &nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnRefresh" runat="server" Text="Reload" CssClass="buttonStyle" OnClick="btnRefresh_Click"
                         OnClientClick="loading()" />&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnFtp" runat="server" Text="Test FTP" CssClass="buttonStyle" OnClick="btnFtp_Click"
