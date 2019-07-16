@@ -55,7 +55,13 @@
                 <br />
             </td>
             <td valign="top">
-                
+                 Currency<br />
+                <asp:DropDownList ID="ddlCurrency" Width="100px" runat="server" Font-Names="Arial" Font-Size="9pt">                    
+                    <asp:ListItem Value="-1" Selected="True">All</asp:ListItem>
+                    <asp:ListItem Value="0">BDT</asp:ListItem>
+                    <asp:ListItem Value="1">FC</asp:ListItem>
+                    
+                </asp:DropDownList>
                 
             </td>
         </tr>
@@ -97,6 +103,8 @@
             <asp:BoundField DataField="BranchNameOwn" HeaderText="Own Branch" />
             <asp:BoundField DataField="EdrId" HeaderText="ID" />
             <asp:BoundField DataField="TraceNumber" HeaderText="Trace" />
+            <asp:BoundField DataField="CurrencyStr" HeaderText="Curr" />
+            <asp:BoundField DataField="SessionEft" HeaderText="Session" />
             <asp:BoundField DataField="BankCommon" HeaderText="Bank" />
             <asp:BoundField DataField="BranchCommon" HeaderText="Branch" />
             <asp:BoundField DataField="AmountCr" HeaderText="Credit" />
@@ -105,6 +113,7 @@
             <asp:BoundField DataField="PaymentInfo" HeaderText="Payment Info" />
             <asp:BoundField DataField="CompanyEntryDesc" HeaderText="Description" />
             <asp:BoundField DataField="CompanyDiscretionaryData" HeaderText="Discretionary Data" />
+            <asp:BoundField DataField="ReturnReason" HeaderText="ReturnReason" />
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
                     <asp:HiddenField ID="hdBatchID" runat="server" Value='<%# Eval("EdrId") %>' />

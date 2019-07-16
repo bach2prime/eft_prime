@@ -14,7 +14,7 @@
                     runat="server">
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;
-                User ID or Name
+                User ID, Name or Employee ID
                 <asp:TextBox CssClass="textBox" ID="txtNameSearch" runat="server" TabIndex="2" Width="140px"></asp:TextBox>
                 <asp:Button ID="ButtonGetUser" CssClass="buttonStyle" runat="server" Text="Get Users"
                     OnClick="ButtonGetUser_Click" />
@@ -219,6 +219,7 @@
                         <asp:BoundField DataField="BranchNameExt" HeaderText="Branch" />
                         <asp:BoundField DataField="Name" HeaderText="User Name" />
                         <asp:BoundField DataField="FullName" HeaderText="Full Name" />
+                        <asp:BoundField DataField="EmployeeId" HeaderText="Employee ID" />
                         <asp:BoundField DataField="PhoneNo" HeaderText="Phone No" />
                         <asp:BoundField DataField="ActivityStatus" HeaderText="Status 0=Active" />
                         <asp:TemplateField HeaderText="">

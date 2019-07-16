@@ -31,6 +31,13 @@
         <tr>
             <td valign="top" colspan="2">
                 <fieldset class="formBoxGV">
+                    
+1. Column B : Branch Name &nbsp;&nbsp;&nbsp;&nbsp;
+2. Column C : Routing Number&nbsp;&nbsp;&nbsp;&nbsp;
+
+3. Row 1 : Header Text&nbsp;&nbsp;&nbsp;&nbsp;
+4. Data starts from Row 2&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br /><br />
                     <legend>
                         <asp:Label ID="Label4" runat="server" Text="Update All Branches"></asp:Label>
                     </legend>Select Excel File containing All Branches
