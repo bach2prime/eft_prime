@@ -72,6 +72,15 @@
                     </tr>
                     <tr>
                         <td class="rightAlign">
+                            Email
+                        </td>
+                        <td>
+                            <asp:TextBox CssClass="textBox" ID="txtEmail" runat="server" TabIndex="2" Width="200px"
+                                MaxLength="100"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">
                             Phone No
                         </td>
                         <td>
@@ -90,6 +99,7 @@
                             &nbsp;optional
                         </td>
                     </tr>
+                    
                     <tr>
                         <td class="rightAlign">
                             Role

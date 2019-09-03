@@ -35,6 +35,7 @@
                         <asp:BoundField DataField="EdrOutId" HeaderText="ID" />
                         <asp:BoundField DataField="ItemTypeStr" HeaderText="Type" />
                         <asp:BoundField DataField="TraceNumber" HeaderText="Trace No" />
+                        <asp:BoundField DataField="FtNo" HeaderText="T24 TxID" />
                         <asp:BoundField DataField="OrigBank" HeaderText="From" />
                         <asp:BoundField DataField="AmountCr" HeaderText="AmountCr" />
                         <asp:BoundField DataField="AmountDr" HeaderText="AmountDr" />

@@ -55,6 +55,15 @@
                     <td align="left" style="">
                     </td>
                 </tr>
+                <tr>
+                    <td align="left" width="33%">
+                        <asp:Label ID="Label5" runat="server" Font-Size="14px" Text="T24 TxID:"></asp:Label>
+                        &nbsp;&nbsp;
+                        <asp:Label ID="LabelT24TxID" runat="server" Font-Bold="True" Font-Underline="False"></asp:Label>
+                    </td>
+                    <td align="left" style="">
+                    </td>
+                </tr>
             </table>
             <div class="main">
                 <h3>
