@@ -23,6 +23,8 @@
                 <asp:DropDownList ID="ddTransactionType" runat="server">
                 </asp:DropDownList>
                 &nbsp;
+                <asp:DropDownList ID="ddlSession" runat="server" Font-Names="Segoe UI" Font-Size="8pt"/>
+                &nbsp;
                 <cc1:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="Image1"
                     TargetControlID="tbsettDate" Format="dd/MM/yyyy">
                 </cc1:CalendarExtender>
@@ -38,7 +40,7 @@
                 </asp:Panel>
                 <h4>
                     <b>Inward Items for Maker</b></h4>
-                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4"
+                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4" AllowCustomPaging="True" PageSize="50"
                     ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled" OnRowDataBound="gridviewItems_RowDataBound">
                     <Columns>
                         <asp:TemplateField>
@@ -95,7 +97,7 @@
 
                 <h4>
                     Inward Returns</h4>
-                <asp:GridView ID="gridviewInwardReturns" runat="server" AutoGenerateColumns="False"
+                <asp:GridView ID="gridviewInwardReturns" runat="server" AutoGenerateColumns="False" AllowCustomPaging="True" PageSize="50"
                     CellPadding="4" ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled">
                     <Columns>
                         <asp:TemplateField>
