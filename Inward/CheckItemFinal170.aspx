@@ -39,8 +39,8 @@
                 <h4>
                     <b>Inward Items for Checker</b>
                     <%--and Inward Dishonored Returns--%></h4>
-                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4" AllowCustomPaging="True" PageSize="50"
-                    ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled" OnRowDataBound="gridviewItems_RowDataBound">
+                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4" AllowPaging="True" PageSize="50"
+                    ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled" OnRowDataBound="gridviewItems_RowDataBound" OnPageIndexChanging="gridviewTxList_OnPageIndexChanging">
                     <Columns>
                         <asp:TemplateField>
                             <ItemStyle Width="15px" />

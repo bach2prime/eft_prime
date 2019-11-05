@@ -40,8 +40,8 @@
                 </asp:Panel>
                 <h4>
                     <b>Inward Items for Maker</b></h4>
-                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4" AllowCustomPaging="True" PageSize="50"
-                    ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled" OnRowDataBound="gridviewItems_RowDataBound">
+                <asp:GridView ID="gridviewTxList" runat="server" AutoGenerateColumns="False" CellPadding="4" AllowPaging="True" PageSize="50"
+                    ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled" OnRowDataBound="gridviewItems_RowDataBound" OnPageIndexChanging="gridviewTxList_OnPageIndexChanging">
                     <Columns>
                         <asp:TemplateField>
                             <ItemStyle Width="15px" />
@@ -94,38 +94,7 @@
                     <asp:Button runat="server" ID="CreditBulkHonor" CssClass="buttonStyle" OnClientClick="return window.confirm('Are you sure to Honor the selected items?');"
                     OnClick="CreditBulkHonor_Click" Text="Honor" />
                 </asp:Panel>
-
-                <h4>
-                    Inward Returns</h4>
-                <asp:GridView ID="gridviewInwardReturns" runat="server" AutoGenerateColumns="False" AllowCustomPaging="True" PageSize="50"
-                    CellPadding="4" ForeColor="#151515" GridLines="None" Width="100%" ViewStateMode="Enabled">
-                    <Columns>
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <%--<a href="javascript:showCheckItemDetails('<%# Eval("EdrOutId") %>','edrout')">Process</a>--%>
-                                <a href="CheckItemProcess<%# Eval("BankCode") %>.aspx?edrId=<%# Eval("EdrOutId") %>&inout=edrout" target="_blank">
-                                    Process</a>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:BoundField DataField="ItemTypeStr" HeaderText="Type" />
-                        <asp:BoundField DataField="TraceNumber" HeaderText="Trace No" />
-                        <%--<asp:BoundField DataField="SettlementDate" HeaderText="Settlement Date" DataFormatString="{0:dd MMM yyyy}" />--%>
-                        <asp:BoundField DataField="OrigBank" HeaderText="From" />
-                        <%--<asp:BoundField DataField="CompanyName" HeaderText="Company" />--%>
-                        <asp:BoundField DataField="AmountCr" HeaderText="AmountCr" />
-                        <asp:BoundField DataField="AmountDr" HeaderText="AmountDr" />
-                        <asp:BoundField DataField="DfiAccountNumber" HeaderText="A/C" />
-                        <asp:BoundField DataField="TransactionCode" HeaderText="Tx Code" />
-                        <asp:BoundField DataField="StatusStr" HeaderText="Status" />
-                    </Columns>
-                    <FooterStyle BackColor="#F1F1F1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#C0C0C0" Height="15px" ForeColor="White" />
-                    <SelectedRowStyle CssClass="SelectedRowStyle" />
-                    <HeaderStyle CssClass="HeaderStyleDark" />
-                    <RowStyle CssClass="RowStyle" />
-                    <EditRowStyle CssClass="EditRowStyle" />
-                    <AlternatingRowStyle CssClass="AlternatingRowStyle" />
-                </asp:GridView>
+                
             </div>
 
             <div style="display: none">
