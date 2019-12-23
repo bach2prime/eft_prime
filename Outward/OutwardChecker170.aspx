@@ -12,7 +12,7 @@
                 <tr>
                     <td>
                         <asp:DropDownList ID="ddlBranch" runat="server" DataTextField="BranchName" DataValueField="BranchID"
-                             AppendDataBoundItems="true">
+                            AppendDataBoundItems="true">
                         </asp:DropDownList>
                     </td>
                     <td>
@@ -53,50 +53,41 @@
                 <asp:Label ID="Label1" runat="server" Text="Batch Details"></asp:Label></legend>
             <table style="width: 100%" cellpadding="4" cellspacing="0" class="dataEntryTable">
                 <tr class="evenRow">
-                    <td>
-                        Batch ID:
+                    <td>Batch ID:
                         <asp:Label ID="LabelBatchID" runat="server" Font-Bold="true" Text="0"></asp:Label>
                         &nbsp;&nbsp;&nbsp; Batch No:
                         <asp:Label ID="LabelBatchNumber" runat="server" Font-Bold="true" Text="0"></asp:Label>
                         &nbsp;&nbsp;&nbsp;
                     </td>
-                    <td>
-                        Payment Type:
+                    <td>Payment Type:
                         <asp:Label ID="LabelType" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
-                        Company Id:
+                    <td>Company Id:
                         <asp:Label ID="LabelCompanyId" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr class="evenRow">
-                    <td>
-                        Company Name:
+                    <td>Company Name:
                         <asp:Label ID="LabelCompName" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
-                        Entry Desc:
+                    <td>Entry Desc:
                         <br />
                         <asp:Label ID="LabelEntryDesc" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
-                        Discretionary Data:
+                    <td>Discretionary Data:
                         <br />
                         <asp:Label ID="LabelDiscData" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr class="evenRow" style="font-weight: bold;">
-                    <td>
-                        Item Count:
+                    <td>Item Count:
                         <asp:Label ID="LabelItemCount" runat="server" Text="0"></asp:Label>
                     </td>
-                    <td>
-                        Credit:
+                    <td>Credit:
                         <asp:Label ID="LabelCredit" runat="server" Text="0"></asp:Label>
                         <asp:Label ID="LabelCreditCurrency" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
-                        Debit:
+                    <td>Debit:
                         <asp:Label ID="LabelDebit" runat="server" Text="0"></asp:Label>
                         <asp:Label ID="LabelDebitCurrency" runat="server" Text=""></asp:Label>
                     </td>
@@ -126,7 +117,7 @@
                         <ItemStyle Width="180px" />
                         <ItemTemplate>
                             <asp:HiddenField ID="hdEdrOutId" runat="server" Value='<%# Eval("EdrOutId") %>' />
-                            <asp:LinkButton ID="LinkButtonRm" runat="server" OnClick="UpdateItem">Remake</asp:LinkButton>
+                            <%--<asp:LinkButton ID="LinkButtonRm" runat="server" OnClick="UpdateItem">Remake</asp:LinkButton>--%>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:LinkButton ID="LinkButtonRej" runat="server" ForeColor="Red" OnClientClick="return window.confirm('This item will be deleted from this batch. Are you sure?');"
                                 OnClick="ButtonDeleteItemYes_Click">Delete </asp:LinkButton>
@@ -142,10 +133,13 @@
                 <AlternatingRowStyle CssClass="AlternatingRowStyle" />
             </asp:GridView>
             <br />
+            <asp:Button ID="ButtonProcessItems" OnClientClick="return window.confirm('These items will be sent to CBS. Are you sure?');"
+                runat="server" CssClass="buttonStyle" Text="Send to CBS" OnClick="ButtonProcessItems_Click" />
+            &nbsp;
             <asp:Button ID="ButtonUpdateBatch" OnClientClick="return window.confirm('This Batch will be finalized. Are you sure?');"
                 runat="server" CssClass="buttonStyle" Text="Checking Done" OnClick="ButtonYes_Click" />
             &nbsp;<asp:Button ID="ButtonUnlockBatch" runat="server" CssClass="buttonStyle" Visible="false"
-                Text="Unlock Batch" OnClick="ButtonUnlockBatch_Click" />           
+                Text="Unlock Batch" OnClick="ButtonUnlockBatch_Click" />
         </fieldset>
     </div>
 </asp:Content>
