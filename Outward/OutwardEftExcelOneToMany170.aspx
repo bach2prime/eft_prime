@@ -40,10 +40,9 @@
                     <asp:Button ID="btParseXlsFile" runat="server" Text="Parse File" CssClass="buttonStyle"
                         OnClick="btParseXlsFile_Click" OnClientClick="loading()" />
                     &nbsp;
-                    <asp:Button ID="btValidateXlsFile" runat="server" Text="Validate File" CssClass="buttonStyle"
-                        OnClick="btnValidateXlsFile_Click" OnClientClick="loading()" />
+                    
                     <span style="width: 120px; margin-left: 75px"><a href="../media/OneToMany_sample.xls">One-Many Sample</a> </span>
-                    <span style="width: 120px; margin-left: 20px"><a href="../media/ManyToMany_sample.xls">Many-Many Sample</a> </span>
+                    
                 </fieldset>
             </td>
         </tr>
