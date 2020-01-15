@@ -13,6 +13,12 @@
     <asp:UpdatePanel ID="downloadICE" runat="server">
         <ContentTemplate>
             <div id="divEFTItemList" runat="server">
+                 <asp:DropDownList ID="ddlBranch" runat="server" DataTextField="BranchName" DataValueField="BranchID"
+                    AppendDataBoundItems="true">
+                    <asp:ListItem Value="0">All Branches</asp:ListItem>
+                </asp:DropDownList>
+                &nbsp;
+
                 <cc1:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="Image1"
                     TargetControlID="tbsettDate" Format="dd/MM/yyyy">
                 </cc1:CalendarExtender>
