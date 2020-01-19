@@ -9,7 +9,7 @@
               <Width>0.54816in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.62083in</Width>
+              <Width>0.80416in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.68896in</Width>
@@ -802,7 +802,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Routing No</Value>
+                              <Value>Branch</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -2324,7 +2324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ReceivingBankRt.Value</Value>
+                              <Value>=Fields!RecvBranchName.Value &amp; " " &amp; Fields!ReceivingBankRt.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -4886,7 +4886,7 @@
         <Top>0.15292in</Top>
         <Left>0.06958in</Left>
         <Height>1.70833in</Height>
-        <Width>14.18124in</Width>
+        <Width>14.36457in</Width>
         <Style>
           <Border>
             <Style>None</Style>
